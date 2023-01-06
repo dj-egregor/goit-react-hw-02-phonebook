@@ -19,6 +19,7 @@ class Filter extends React.Component {
           Find contacts by name
         </label>
         <input
+          className={css.filterInput}
           type="text"
           name="filter"
           value={this.state.filter}
