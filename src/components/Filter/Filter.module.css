@@ -1,0 +1,9 @@
+.label {
+  margin-bottom: 10px;
+}
+
+.searchWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px;
+}
