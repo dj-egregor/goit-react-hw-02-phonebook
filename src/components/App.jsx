@@ -37,7 +37,7 @@ class App extends React.Component {
         contacts: [...prevState.contacts, { ...contact, id }],
       }));
     } else {
-      alert(`A contact with the same ${name} already exists!`);
+      alert(`${name} is already in contacts.`);
     }
   };
 
