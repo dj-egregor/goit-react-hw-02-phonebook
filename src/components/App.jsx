@@ -27,8 +27,9 @@ class App extends React.Component {
 
   addContact = contact => {
     const { name } = contact;
+    const lowerCaseName = name.toLowerCase();
     const isNameUnique = !this.state.contacts.some(
-      existingContact => existingContact.name === name
+      existingContact => existingContact.name.toLowerCase() === lowerCaseName
     );
 
     if (isNameUnique) {
@@ -36,6 +37,7 @@ class App extends React.Component {
       this.setState(prevState => ({
         contacts: [...prevState.contacts, { ...contact, id }],
       }));
+      this.setState({ name: '', number: '' });
     } else {
       alert(`${name} is already in contacts.`);
     }

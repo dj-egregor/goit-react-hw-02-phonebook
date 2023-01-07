@@ -8,12 +8,16 @@ class ContactForm extends React.Component {
     number: '',
   };
 
-  updateNumber = event => {
-    this.setState({ number: event.target.value });
-  };
+  // updateNumber = event => {
+  //   this.setState({ number: event.target.value });
+  // };
 
-  updateName = event => {
-    this.setState({ name: event.target.value });
+  // updateName = event => {
+  //   this.setState({ name: event.target.value });
+  // };
+
+  updateField = name => event => {
+    this.setState({ [name]: event.target.value });
   };
 
   render() {
@@ -30,7 +34,7 @@ class ContactForm extends React.Component {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           value={this.state.name}
-          onChange={this.updateName}
+          onChange={this.updateField('name')}
         />
         <label className={css.label} htmlFor="number">
           Number
@@ -43,11 +47,17 @@ class ContactForm extends React.Component {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           value={this.state.number}
-          onChange={this.updateNumber}
+          onChange={this.updateField('number')}
         />
         <button
           type="button"
-          onClick={() => this.props.onAddContact(this.state)}
+          onClick={() => {
+            this.props.onAddContact(this.state);
+            this.setState({
+              name: '',
+              number: '',
+            });
+          }}
         >
           Add Contact
         </button>
