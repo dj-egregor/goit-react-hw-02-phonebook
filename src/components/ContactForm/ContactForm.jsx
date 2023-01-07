@@ -42,7 +42,7 @@ class ContactForm extends React.Component {
           onChange={this.updateField('number')}
         />
         <button
-          type="button"
+          type="submit"
           onClick={() => {
             this.props.onAddContact(this.state);
             this.setState({
