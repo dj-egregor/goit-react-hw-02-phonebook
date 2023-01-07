@@ -17,7 +17,6 @@ class Filter extends React.Component {
           className={css.filterInput}
           type="text"
           name="filter"
-          value={this.props.filter}
           onChange={this.updateFilter}
         />
       </div>
