@@ -8,14 +8,6 @@ class ContactForm extends React.Component {
     number: '',
   };
 
-  // updateNumber = event => {
-  //   this.setState({ number: event.target.value });
-  // };
-
-  // updateName = event => {
-  //   this.setState({ name: event.target.value });
-  // };
-
   updateField = name => event => {
     this.setState({ [name]: event.target.value });
   };
