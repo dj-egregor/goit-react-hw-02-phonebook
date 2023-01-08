@@ -18,6 +18,7 @@ class Filter extends React.Component {
           type="text"
           name="filter"
           onChange={this.updateFilter}
+          value={this.props.filter}
         />
       </div>
     );
