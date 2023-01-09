@@ -27,6 +27,7 @@ class Filter extends React.Component {
 
 Filter.propTypes = {
   onFilter: PropTypes.func.isRequired,
+  filter: PropTypes.string,
 };
 
 export default Filter;
